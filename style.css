@@ -408,7 +408,7 @@ a {
 .site-logo, 
 header img {
     height: auto !important;
-    max-height: 80px !important; /* Set standard height for desktop */
+    max-height: 100px !important; /* Set standard height for desktop */
     width: auto !important;
     display: block;
     margin: 0 auto;
@@ -420,8 +420,8 @@ header img {
     .logo img, 
     .site-logo, 
     header img {
-        max-height: 95px !important; /* Larger display size on mobile screens */
-        margin-bottom: 10px;
+        max-height: 120px !important; /* Larger display size on mobile screens */
+        margin-bottom: 20px;
     }
 }
 /* Dark Section / Bank */
