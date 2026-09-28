@@ -683,70 +683,85 @@ footer {
    IPHONE 11 EDGE-TO-EDGE HEADER ALIGNMENT
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* Full width header container with minimal padding */
+    /* Header layout container */
     header, .header-container {
         display: flex !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
         width: 100% !important;
-        padding: 10px 4px 10px 4px !important; /* Extremely tight side padding */
+        padding: 10px 12px !important;
         box-sizing: border-box !important;
-        gap: 4px !important;
+        gap: 10px !important;
     }
 
-    /* Pin logo to far-left screen edge */
+    /* Top Banner with Quote + Logo integrated */
+    .top-quote-banner, .scripture-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    /* Logo Styling */
     .logo, .brand-title, header > a:first-child {
         flex: 0 0 auto !important;
         margin: 0 !important;
     }
 
     .logo img, .site-logo, header img {
-        width: 58px !important; /* Compact size to give maximum space to text */
+        width: 48px !important;
         height: auto !important;
-        max-height: 70px !important;
+        max-height: 55px !important;
         display: block !important;
         margin: 0 !important;
         object-fit: contain !important;
     }
 
-    /* Shift text block left to start right beside logo */
+    /* Main container for contact info and nav links */
     .header-right, header > div, nav {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        text-align: left !important;
-        flex: 1 1 auto !important;
-        width: calc(100% - 62px) !important;
+        width: 100% !important;
+        gap: 8px !important;
     }
 
-    /* Phone + WhatsApp row spanning full remaining width */
+    /* Phone + WhatsApp row */
     .contact-info, .header-contact {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        gap: 6px !important;
-        margin: 2px 0 8px 0 !important;
-        font-size: 0.72rem !important; /* Perfectly sized to fit 'WhatsApp' on mobile */
+        gap: 8px !important;
+        margin: 0 !important;
+        font-size: 0.85rem !important;
         white-space: nowrap !important;
     }
 
-    /* Navigation links flush with phone icon */
+    /* Navigation links arranged HORIZONTALLY across the page */
     nav ul, .nav-links {
         display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 6px !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 12px 16px !important; /* Row and column spacing between items */
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 4px 0 0 0 !important;
         list-style: none !important;
+        width: 100% !important;
+    }
+
+    nav li, .nav-links li {
+        display: inline-block !important;
+        margin: 0 !important;
     }
 
     nav a, .nav-links a {
         font-size: 0.85rem !important;
-        padding: 1px 0 !important;
+        padding: 2px 0 !important;
         text-align: left !important;
+        white-space: nowrap !important;
     }
 }
