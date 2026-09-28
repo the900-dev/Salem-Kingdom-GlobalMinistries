@@ -677,3 +677,59 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ==========================================
+   MOBILE HEADER & CONTACT FIX
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Stack top header elements vertically */
+    header, .header-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 15px 10px !important;
+    }
+
+    /* Keep phone number & WhatsApp on one clean line */
+    .contact-info, .header-contact, header p, header span {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important; /* Prevents number from line-breaking */
+        width: 100% !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Force the official logo to display large and centered */
+    .logo, .site-logo, header img {
+        width: 160px !important;       /* Clean explicit width */
+        height: auto !important;
+        max-height: none !important;
+        display: block !important;
+        margin: 10px auto 15px auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Navigation links stacked neatly */
+    nav ul, .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        width: 100% !important;
+    }
+
+    nav a, .nav-links a {
+        font-size: 1rem !important;
+        padding: 6px 12px !important;
+    }
+}
