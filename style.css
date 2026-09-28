@@ -743,72 +743,73 @@ footer {
 }
 
 /* ==========================================
-   HEADER LAYOUT: TOP-LEFT LOGO + RIGHT ALIGNED TEXT
+   IPHONE 11 MOBILE HEADER & ORDERING FIX
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* Main header wrapper set to horizontal side-by-side flex */
+    /* Header container pinned close to edges */
     header, .header-container {
         display: flex !important;
         flex-direction: row !important;
-        justify-content: space-between !important;
+        justify-content: flex-start !important;
         align-items: flex-start !important;
         width: 100% !important;
-        padding: 12px 15px !important;
+        padding: 8px 8px !important; /* Reduced side padding to maximize screen width */
         box-sizing: border-box !important;
-        gap: 15px !important;
+        gap: 8px !important;
     }
 
-    /* 1. Logo anchored directly at the top-left circle */
+    /* Push logo to extreme top-left */
     .logo, .brand-title, header > a:first-child {
         flex: 0 0 auto !important;
         margin: 0 !important;
     }
 
     .logo img, .site-logo, header img {
-        width: 75px !important;         /* Sharp, crisp mobile logo size */
+        width: 65px !important; /* Tight size for small screens */
         height: auto !important;
-        max-height: 85px !important;
+        max-height: 75px !important;
         display: block !important;
         margin: 0 !important;
         object-fit: contain !important;
     }
 
-    /* 2. Container holding all text starting right after your drawn line */
+    /* Text block shifted left to accommodate full contact line */
     .header-right, header > div, nav {
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important; /* Aligns all text cleanly along your drawn vertical line */
+        align-items: flex-start !important;
         text-align: left !important;
         flex: 1 1 auto !important;
-        width: auto !important;
+        width: calc(100% - 73px) !important;
     }
 
-    /* Phone number & WhatsApp row along the top right */
+    /* Contact line fitting WhatsApp without overflow */
     .contact-info, .header-contact {
         display: flex !important;
         flex-direction: row !important;
-        flex-wrap: wrap !important;
+        flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        gap: 10px !important;
-        margin-bottom: 10px !important;
-        font-size: 0.8rem !important;
+        gap: 6px !important;
+        margin-top: 4px !important;
+        margin-bottom: 8px !important;
+        font-size: 0.75rem !important; /* Scaled down slightly for iPhone 11 display */
         white-space: nowrap !important;
     }
 
-    /* Navigation menu links starting right at the line */
+    /* Navigation links stacked vertically */
     nav ul, .nav-links {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        gap: 6px !important;
+        gap: 5px !important;
         padding: 0 !important;
         margin: 0 !important;
         list-style: none !important;
     }
 
     nav a, .nav-links a {
-        font-size: 0.9rem !important;
+        font-size: 0.85rem !important;
         padding: 2px 0 !important;
         text-align: left !important;
     }
