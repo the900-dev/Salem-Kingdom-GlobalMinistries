@@ -402,26 +402,27 @@ a {
     color: var(--gold-accent);
 }
 /* ==========================================
-   OFFICIAL LOGO STYLING
+   OFFICIAL LOGO MOBILE SIZE BOOST
    ========================================== */
 .logo img, 
 .site-logo, 
 header img {
     height: auto !important;
-    max-height: 100px !important; /* Set standard height for desktop */
     width: auto !important;
+    max-height: 110px !important; /* Standard desktop display */
     display: block;
     margin: 0 auto;
     object-fit: contain;
 }
 
-/* Mobile Logo Adjustment */
 @media screen and (max-width: 768px) {
     .logo img, 
     .site-logo, 
     header img {
-        max-height: 120px !important; /* Larger display size on mobile screens */
-        margin-bottom: 20px;
+        min-width: 180px !important;  /* Forces width on smaller mobile screens */
+        max-height: 150px !important; /* Allows up to 150px height */
+        width: 60% !important;        /* Takes up 60% of mobile screen width */
+        margin: 10px auto !important;
     }
 }
 /* Dark Section / Bank */
