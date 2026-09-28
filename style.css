@@ -741,3 +741,75 @@ footer {
         padding: 4px 6px !important;
     }
 }
+
+/* ==========================================
+   HEADER LAYOUT: TOP-LEFT LOGO + RIGHT ALIGNED TEXT
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Main header wrapper set to horizontal side-by-side flex */
+    header, .header-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        padding: 12px 15px !important;
+        box-sizing: border-box !important;
+        gap: 15px !important;
+    }
+
+    /* 1. Logo anchored directly at the top-left circle */
+    .logo, .brand-title, header > a:first-child {
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+    }
+
+    .logo img, .site-logo, header img {
+        width: 75px !important;         /* Sharp, crisp mobile logo size */
+        height: auto !important;
+        max-height: 85px !important;
+        display: block !important;
+        margin: 0 !important;
+        object-fit: contain !important;
+    }
+
+    /* 2. Container holding all text starting right after your drawn line */
+    .header-right, header > div, nav {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Aligns all text cleanly along your drawn vertical line */
+        text-align: left !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+    }
+
+    /* Phone number & WhatsApp row along the top right */
+    .contact-info, .header-contact {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        margin-bottom: 10px !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* Navigation menu links starting right at the line */
+    nav ul, .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+
+    nav a, .nav-links a {
+        font-size: 0.9rem !important;
+        padding: 2px 0 !important;
+        text-align: left !important;
+    }
+}
