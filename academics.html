@@ -457,12 +457,27 @@ function unlockNextVideo(nextIndex) {
     if (nextIndex < videoSeries.length) {
         const cardId = videoSeries[nextIndex].cardId;
         const card = document.getElementById(cardId);
+        
         if (card) {
+            // Remove locked class and reset interaction
+            card.classList.remove('locked');
             card.style.opacity = '1';
             card.style.pointerEvents = 'auto';
             card.style.filter = 'grayscale(0%)';
             card.style.background = '#FFFFFF';
 
+            // Ensure iframe and container explicitly accept click events
+            const iframeContainer = card.querySelector('.iframe-container');
+            if (iframeContainer) {
+                iframeContainer.style.pointerEvents = 'auto';
+            }
+
+            const iframe = card.querySelector('iframe');
+            if (iframe) {
+                iframe.style.pointerEvents = 'auto';
+            }
+
+            // Update status badge
             const badge = card.querySelector('.status-badge');
             if (badge) {
                 badge.textContent = 'Unlocked';
