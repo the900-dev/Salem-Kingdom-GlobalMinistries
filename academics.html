@@ -302,5 +302,65 @@
     </footer>
 
     <script src="main.js"></script>
+    <!-- YOUTUBE IFRAME API & UNLOCK LOGIC -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+// Array mapping all 5 teachings in order
+const videoSeries = [
+    { id: 'player-1', videoId: 'hKO0F-loFGI', cardId: 'card-video-1' },
+    { id: 'player-2', videoId: 'RuKAcsUq7zQ', cardId: 'card-video-2' },
+    { id: 'player-3', videoId: 'Gwh889cGZnA', cardId: 'card-video-3' },
+    { id: 'player-4', videoId: '6WBtxB0dPIU', cardId: 'card-video-4' },
+    { id: 'player-5', videoId: 'vQ0vkIEhpC8', cardId: 'card-video-5' }
+];
+
+let players = {};
+
+// Automatically executed when YouTube API initializes
+function onYouTubeIframeAPIReady() {
+    videoSeries.forEach((item, index) => {
+        players[item.id] = new YT.Player(item.id, {
+            videoId: item.videoId,
+            playerVars: {
+                'rel': 0,
+                'modestbranding': 1
+            },
+            events: {
+                'onStateChange': (event) => handleStateChange(event, index)
+            }
+        });
+    });
+}
+
+// Detect when video ends
+function handleStateChange(event, index) {
+    if (event.data === YT.PlayerState.ENDED) {
+        let nextIndex = index + 1;
+        if (nextIndex < videoSeries.length) {
+            unlockNextVideo(videoSeries[nextIndex].cardId);
+        }
+    }
+}
+
+// Unlocks card styling and enables user interaction
+function unlockNextVideo(cardId) {
+    const card = document.getElementById(cardId);
+    if (card) {
+        card.style.opacity = '1';
+        card.style.pointerEvents = 'auto';
+        card.style.filter = 'grayscale(0%)';
+        card.style.background = '#FFFFFF';
+
+        const badge = card.querySelector('.status-badge');
+        if (badge) {
+            badge.textContent = 'Unlocked';
+            badge.style.background = '#e8f5e9';
+            badge.style.color = '#2e7d32';
+            badge.style.borderColor = '#a5d6a7';
+        }
+    }
+}
+</script>
 </body>
 </html>
