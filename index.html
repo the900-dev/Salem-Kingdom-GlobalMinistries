@@ -180,24 +180,57 @@
             <p>Step into consecration, discipleship, and spiritual leadership.</p>
         </div>
 
-        <div class="form-grid">
-            <div class="form-card">
-                <h3>Submit an Application or Request</h3>
-               <form id="ministryForm" action="http://localhost:5678/webhook/salem-form" method="POST">
-    <!-- FormSubmit Configuration Settings -->
-    <input type="hidden" name="_subject" value="New Ministry Application / Booking - Salem Kingdom">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
+       <div class="form-grid">
+    <div class="form-card">
+        <h3>Submit an Application or Request</h3>
+        <form id="ministryForm" action="http://localhost:5678/webhook/salem-form" method="POST">
+            <!-- Form Parameters -->
+            <input type="hidden" name="_subject" value="New Ministry Application / Booking - Salem Kingdom">
 
-    <div class="form-group">
-        <label for="requestType">Select Category</label>
-        <select id="requestType" name="Category" required>
-            <option value="Foundation Class Registration">Foundation Class Registration</option>
-            <option value="Water Baptism Application">Water Baptism Application</option>
-            <option value="Pastoral Appointment">Book Appointment with Lead Steward</option>
-            <option value="Prayer Request">Submit Prayer Request</option>
-        </select>
+            <div class="form-group">
+                <label for="requestType">Select Category</label>
+                <select id="requestType" name="Category" required>
+                    <option value="Foundation Class Registration">Foundation Class Registration</option>
+                    <option value="Water Baptism Application">Water Baptism Application</option>
+                    <option value="Pastoral Appointment">Book Appointment with Lead Steward</option>
+                    <option value="Prayer Request">Submit Prayer Request</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email Address" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone / WhatsApp Number</label>
+                <input type="tel" id="phone" name="Phone Number" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes / Prayer Details</label>
+                <textarea id="notes" name="Message / Prayer Details" rows="4" placeholder="Share any specific details or request preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-crimson">Submit Request & Send Email</button>
+        </form>
     </div>
+
+    <div class="info-card">
+        <h3>Pastoral Counseling Details</h3>
+        <p>Appointments with the Lead Steward are set aside for spiritual counsel, deliverance, and strategic ministry alignment.</p>
+        <ul class="check-list">
+            <li>One-on-one spiritual counseling</li>
+            <li>Ministry alignment & mentorship</li>
+            <li>Consecration & baptism preparation</li>
+        </ul>
+    </div>
+</div>
 
     <div class="form-group">
         <label for="fullName">Full Name</label>
